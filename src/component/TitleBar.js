@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Titlebar.scss"
 
 export class TitleBar extends Component {
+
     render() {
         return <>
             <section class="hero  is-dark is-bold">
@@ -12,7 +13,9 @@ export class TitleBar extends Component {
                     </div>
                 </div>
             </section>
-            
+
+            {
+            }
         </>;
     }
 }
