@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
 import "./Titlebar.scss"
 
 export class TitleBar extends Component {
@@ -13,8 +12,7 @@ export class TitleBar extends Component {
                     </div>
                 </div>
             </section>
-            {/*<button className="button is-primary is-size-4e">button</button>*/}
-            {/*<a class="button is-link"> button</a>*/}
+            
         </>;
     }
 }
