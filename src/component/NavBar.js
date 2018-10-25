@@ -7,24 +7,43 @@ import {Link} from "react-router-dom";
 export class NavBar extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            menu: "navbar-menu"
+        }
+        this.toggleBurger = this.toggleBurger.bind(this)
+    }
+
+    toggleBurger() {
+        if (this.state.menu === "navbar-menu") {
+            this.setState({
+                menu: "navbar-menu is-active"
+            })
+        } else {
+            this.setState({
+                menu: "navbar-menu"
+            })
+        }
 
     }
-    render() {
-        return <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
-                    <img src={logo} alt="Logo" width="28" height="28"/>
-                </a>
 
-                <span role="button" className="navbar-burger burger"
-                   aria-label="menu" aria-expanded="false"
-                   data-target="navbarBasicExample">
+    render() {
+        return <nav id="navbar" className="navbar is-dark" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <a className="navbar-item" href="/">
+                        <img src={logo} alt="Logo" width="28" height="28"/>
+                    </a>
+
+                    <span role="button" className="navbar-burger burger"
+                          aria-label="menu" aria-expanded="false"
+                          data-target="navEntry"
+                          onClick={this.toggleBurger}
+                >
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </span>
-            </div>
-            <div className="navbar-menu">
+                </div>
+                <div className={this.state.menu} id="navEntry">
                 <div className="navbar-start">
                     <Link className="navbar-item" to="/">
                         Home
@@ -33,9 +52,9 @@ export class NavBar extends Component {
 
 
                     <div className="navbar-item has-dropdown is-hoverable">
-                        <a className="navbar-link">
+                        <Link className="navbar-link" to="">
                             More
-                        </a>
+                        </Link>
 
                         <div className="navbar-dropdown">
                             <Link className="navbar-item" to="">
@@ -55,17 +74,17 @@ export class NavBar extends Component {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-primary">
+                            <Link to={""} className="button is-primary">
                                 <strong>Sign up</strong>
-                            </a>
-                            <a className="button is-light">
+                            </Link>
+                            <Link to={""} className="button is-light">
                                 Log in
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
+            </nav>
 
 
     }

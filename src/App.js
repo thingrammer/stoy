@@ -4,7 +4,7 @@ import {TitleBar} from './component/TitleBar';
 import {Helmet} from "react-helmet";
 import {NavBar} from './component/NavBar'
 
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 
 import Sticky from 'react-stickynode'
@@ -30,7 +30,9 @@ class App extends Component {
                         <Sticky enabled={true}>
                             <NavBar/>
                         </Sticky>
-                        <Route path="/box" component={FeedBox}/>
+                        <Route path="/box" component={() => <FeedBox uname="Liu" date={new Date().toUTCString()}>
+                            This is my first post. I need to write something useless to occupy the paragraph.
+                        </FeedBox>}/>
                         <Route path="/" exact component={null}/>
                         {/*<Route path="/" component={FeedBox}/>*/}
                     </>
