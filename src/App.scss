@@ -1,0 +1,16 @@
+.Feedlist {
+  margin-top: 1em;
+}
+
+#Backtop {
+  position: fixed;
+  color: teal;
+  font-size: 4em;
+  bottom: 0;
+  right:0;
+  text-shadow: 0 0 5px black;
+  cursor: pointer;
+}
+.Hidden{
+  display:none;
+}

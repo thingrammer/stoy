@@ -3,6 +3,7 @@ import logo from './logo.png'
 import "bulma"
 import {Link} from "react-router-dom";
 
+// import {BackTop} from './BackTop';
 
 export class NavBar extends Component {
     constructor(props) {
@@ -28,22 +29,22 @@ export class NavBar extends Component {
 
     render() {
         return <nav id="navbar" className="navbar is-dark" role="navigation" aria-label="main navigation">
-                <div className="navbar-brand">
-                    <a className="navbar-item" href="/">
-                        <img src={logo} alt="Logo" width="28" height="28"/>
-                    </a>
+            <div className="navbar-brand">
+                <a className="navbar-item" href="/">
+                    <img src={logo} alt="Logo" width="28" height="28"/>
+                </a>
 
-                    <span role="button" className="navbar-burger burger"
-                          aria-label="menu" aria-expanded="false"
-                          data-target="navEntry"
-                          onClick={this.toggleBurger}
+                <span role="button" className="navbar-burger burger"
+                      aria-label="menu" aria-expanded="false"
+                      data-target="navEntry"
+                      onClick={this.toggleBurger}
                 >
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </span>
-                </div>
-                <div className={this.state.menu} id="navEntry">
+            </div>
+            <div className={this.state.menu} id="navEntry">
                 <div className="navbar-start">
                     <Link className="navbar-item" to="/">
                         Home
@@ -75,17 +76,16 @@ export class NavBar extends Component {
                     <div className="navbar-item">
                         <div className="buttons">
                             <Link to={""} className="button is-primary">
-                                <strong>Sign up</strong>
+                                <strong>Green</strong>
                             </Link>
                             <Link to={""} className="button is-light">
-                                Log in
+                                White
                             </Link>
                         </div>
                     </div>
                 </div>
             </div>
-            </nav>
-
+        </nav>
 
     }
 }

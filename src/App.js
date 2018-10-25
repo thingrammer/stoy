@@ -11,10 +11,29 @@ import Sticky from 'react-stickynode'
 
 
 import 'bulma'
-import {FeedBox} from "./component/FeedBox";
-
+// import {FeedBox} from "./component/FeedBox";
+import {FeedList} from "./component/FeedList"
+import {BackTop} from "./component/BackTop";
+import "./App.scss"
 class App extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            backtop_hidden: "Hidden"
+        }
+    }
+    handleStateChange = (status) => {
+        if (status.status === Sticky.STATUS_FIXED) {
+            this.setState({
+                backtop_hidden: ""
+            })
+        } else {
+            this.setState({
+                backtop_hidden: "Hidden"
+            })
+        }
 
+    }
 
     render() {
         return (
@@ -25,22 +44,31 @@ class App extends Component {
                     <meta name='theme-color' content="#880088"/>
                 </Helmet>
                 <TitleBar onScroll={this.pop}/>
+
                 <Router>
                     <>
-                        <Sticky enabled={true}>
+                        <Sticky enabled={true} onStateChange={this.handleStateChange}>
                             <NavBar/>
                         </Sticky>
-                        <Route path="/box" component={() => <FeedBox uname="Liu" date={new Date().toUTCString()}>
-                            This is my first post. I need to write something useless to occupy the paragraph.
-                        </FeedBox>}/>
+                        <Route path="/box"
+                               component={
+                                   () => <FeedList className="Feedlist"/>
+
+
+                               }
+                        />
                         <Route path="/" exact component={null}/>
                         {/*<Route path="/" component={FeedBox}/>*/}
                     </>
                 </Router>
+                {/*<Sticky enabled={true} bottom={0}>*/}
+                {/*<h1>Bottom</h1>*/}
+                {/*</Sticky>*/}
                 {new Array(80).fill(0).map(e => {
                     return <br/>
                 })}
-
+                {/*<BackTop className={this.state.backtop_hidden}/>*/}
+                <BackTop hidden={this.state.backtop_hidden}/>
             </>
         );
     }

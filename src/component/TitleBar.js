@@ -15,7 +15,6 @@ export class TitleBar extends Component {
                     </div>
 
                 </div>
-
                 <a className="level-right" id="Jump-to-context" title="Jump to Homepage Context" href="#navbar">▼</a>
             </section>
         </>;

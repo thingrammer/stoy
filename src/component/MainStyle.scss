@@ -2,4 +2,9 @@
   //margin-left: 95%;
   font-size: 4em;
   cursor: pointer;
+  text-shadow: 0px 0px 7px lightblue;
+}
+
+html {
+  scroll-behavior: smooth; /* <----- THE SECRET ---- */
 }
