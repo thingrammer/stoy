@@ -1,31 +1,36 @@
 import React, {Component} from 'react'
-import logo from '../logo.png'
+import logo from './logo.png'
 import "bulma"
+import {Link} from "react-router-dom";
+
+
 export class NavBar extends Component {
+    constructor(props) {
+        super(props)
+
+    }
     render() {
-        return <nav className="navbar" role="navigation" aria-label="main navigation">
+        return <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item" href="https://bulma.io">
-                    <img src={logo} width="28" height="28"/>
+                    <img src={logo} alt="Logo" width="28" height="28"/>
                 </a>
 
-                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                <span role="button" className="navbar-burger burger"
+                   aria-label="menu" aria-expanded="false"
                    data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </a>
+                </span>
             </div>
-
-            <div id="navEntry" className="navbar-menu">
+            <div className="navbar-menu">
                 <div className="navbar-start">
-                    <a className="navbar-item">
+                    <Link className="navbar-item" to="/">
                         Home
-                    </a>
+                    </Link>
+                    <Link className="navbar-item" to="/box">Box</Link>
 
-                    <a className="navbar-item">
-                       Trash Bin
-                    </a>
 
                     <div className="navbar-item has-dropdown is-hoverable">
                         <a className="navbar-link">
@@ -33,19 +38,16 @@ export class NavBar extends Component {
                         </a>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item">
+                            <Link className="navbar-item" to="">
                                 About
-                            </a>
-                            <a className="navbar-item">
-                                Jobs
-                            </a>
-                            <a className="navbar-item">
+                            </Link>
+                            <Link className="navbar-item" to="">
                                 Contact
-                            </a>
-                            <hr className="navbar-divider">
-                                <a className="navbar-item">
-                                    Report an issue
-                                </a>
+                            </Link>
+                            <hr className="navbar-divider"/>
+                            <Link className="navbar-item" to="">
+                                Report an issue
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -64,6 +66,7 @@ export class NavBar extends Component {
                 </div>
             </div>
         </nav>
+
 
     }
 }
