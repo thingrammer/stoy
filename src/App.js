@@ -50,6 +50,7 @@ class App extends Component {
                         <Sticky enabled={true} onStateChange={this.handleStateChange}>
                             <NavBar/>
                         </Sticky>
+                        <span id="bnavbar"></span>
                         <Route path="/box"
                                component={
                                    () => <FeedList className="Feedlist"/>
