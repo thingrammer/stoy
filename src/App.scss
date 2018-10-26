@@ -1,11 +1,14 @@
 .Feedlist {
-  margin-top: 1em;
+  //margin-top: 3.25rem;
+}
+#bnavbar {
+  height: 3.25rem;
 }
 
 #Backtop {
   position: fixed;
   color: teal;
-  font-size: 4em;
+  font-size: 4rem;
   bottom: 0;
   right:0;
   text-shadow: 0 0 5px black;
@@ -13,4 +16,7 @@
 }
 .Hidden{
   display:none;
+}
+a:hover, a:active, a:focus{
+  outline-style: none;
 }

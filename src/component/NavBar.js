@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import logo from './logo.png'
 import "bulma"
 import {Link} from "react-router-dom";
-
 // import {BackTop} from './BackTop';
 
 export class NavBar extends Component {
@@ -49,7 +48,7 @@ export class NavBar extends Component {
                     <Link className="navbar-item" to="/">
                         Home
                     </Link>
-                    <Link className="navbar-item" to="/box">Box</Link>
+                    <Link className="navbar-item" to="/box#bnavbar" >Box</Link>
 
 
                     <div className="navbar-item has-dropdown is-hoverable">

@@ -14,7 +14,15 @@ import 'bulma'
 // import {FeedBox} from "./component/FeedBox";
 import {FeedList} from "./component/FeedList"
 import {BackTop} from "./component/BackTop";
+import {Footer} from './component/Footer';
+
+
+
+
 import "./App.scss"
+
+
+
 class App extends Component {
     constructor(props){
         super(props)
@@ -50,12 +58,10 @@ class App extends Component {
                         <Sticky enabled={true} onStateChange={this.handleStateChange}>
                             <NavBar/>
                         </Sticky>
-                        <span id="bnavbar"></span>
+                        <div id="bnavbar"></div>
                         <Route path="/box"
                                component={
                                    () => <FeedList className="Feedlist"/>
-
-
                                }
                         />
                         <Route path="/" exact component={null}/>
@@ -69,7 +75,9 @@ class App extends Component {
                     return <br/>
                 })}
                 {/*<BackTop className={this.state.backtop_hidden}/>*/}
+
                 <BackTop hidden={this.state.backtop_hidden}/>
+                <Footer/>
             </>
         );
     }
