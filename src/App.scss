@@ -2,7 +2,7 @@
   //margin-top: 3.25rem;
 }
 #bnavbar {
-  height: 3.25rem;
+  height: 3.29rem;
 }
 
 #Backtop {
@@ -19,4 +19,7 @@
 }
 a:hover, a:active, a:focus{
   outline-style: none;
+}
+input {
+  z-index : 0;
 }
